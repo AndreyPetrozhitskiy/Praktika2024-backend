@@ -99,6 +99,8 @@ model Project_user {
   userId    Int
   project   Project @relation(fields: [projectId], references: [id])
   user      User    @relation(fields: [userId], references: [id])
+
+  @@unique([projectId, userId], name: "projectId_userId_unique")
 }
 
 model Project_platform {

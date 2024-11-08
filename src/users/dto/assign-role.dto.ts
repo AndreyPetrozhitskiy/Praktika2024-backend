@@ -1,9 +1,9 @@
-// src/skills/dto/remove-skill.dto.ts
+// src/users/dto/assign-role.dto.ts
 
 import { ApiProperty } from '@nestjs/swagger';
 import { IsInt, Min } from 'class-validator';
 
-export class RemoveSkillDto {
+export class AssignRoleDto {
   @ApiProperty({
     description: 'ID пользователя',
     example: 1,
@@ -13,10 +13,10 @@ export class RemoveSkillDto {
   userId: number;
 
   @ApiProperty({
-    description: 'ID навыка',
+    description: 'ID роли',
     example: 2,
   })
-  @IsInt({ message: 'skillId должно быть числом' })
-  @Min(1, { message: 'skillId должно быть положительным числом' })
-  skillId: number;
+  @IsInt({ message: 'roleId должно быть числом' })
+  @Min(1, { message: 'roleId должно быть положительным числом' })
+  roleId: number;
 }
